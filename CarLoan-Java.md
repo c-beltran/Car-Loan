@@ -10,6 +10,7 @@ user should expect to make after taking out a car loan. The program will include
 -down payment
 */
 
+
 public class CarLoan {
   public static void main (String[] args) {
     
