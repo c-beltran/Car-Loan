@@ -1,2 +1,2 @@
 # Car-Loan
-Calculating Car Loan Using Java ~Begginer
+Calculating Car Loan Using Java ~Beginer
