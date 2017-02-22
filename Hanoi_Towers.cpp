@@ -1,8 +1,9 @@
 /*
-This project is based on a game which the user moves rings from one tower to the other,
-one by one until all rings end up in the last tower. The program will help the user
-by outputting the appropiate number of moves in based on the number of tower the 
-user wishes to use.
+The program is based on a game of three (3) towers with N number of rings.
+The rings are different sizes with the biggest at the bottom and smallest on top. 
+The user is asked to input the number of rings and program then takes that number
+and outputs the best solution to move the rings from one side to the other 
+(when moving the rings, the big rings cannot go on top of the small rings).
 */
 #include <iostream>
 #include <vector>
