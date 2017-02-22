@@ -51,16 +51,13 @@ public class Droid{
       System.out.println("Battery level is " + batteryLevel + " percent");
     }
   }
-  
-
-	public static void main(String[] args){
-    //object Mega is name of droid
-  	Droid Mega = new Droid();
-  	Mega.activate();
-    //5 is for the amount of hours battery will be charging
-  	Mega.chargeBattery(5);
-    //2 is for the altitude the droid is hovering in feet
-  	Mega.hover(2);
-  
-	}
+  public static void main(String[] args){
+      //object Mega is name of droid
+      Droid Mega = new Droid();
+      Mega.activate();
+      //5 is for the amount of hours battery will be charging
+      Mega.chargeBattery(5);
+      //2 is for the altitude the droid is hovering in feet
+      Mega.hover(2);
+  }
 }
