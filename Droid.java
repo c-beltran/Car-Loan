@@ -1,6 +1,6 @@
 /*This project involves a simple Droid (robot)
  that can be activated, charged, and hover above ground. 
- This project creates some baseline behaviors of the droid.
+ This project creates some base line behaviors of the droid.
 */
 
 public class Droid{ 
