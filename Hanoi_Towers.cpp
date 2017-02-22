@@ -1,7 +1,7 @@
 /*
-This project is based on a game which the user moves rings from one tower to the other
+This project is based on a game which the user moves rings from one tower to the other,
 one by one until all rings end up in the last tower. The program will help the user
-by outputting the appropiate answer of moves in regards to the number of tower the 
+by outputting the appropiate number of moves in based on the number of tower the 
 user wishes to use.
 */
 #include <iostream>
@@ -10,7 +10,7 @@ using namespace std;
 
 int main(){
     vector<int> t[3]; // three towers A,B,C represented as an array of 3 vectors
-    int n, candidate,to, from, move=0; // move counts the move number
+    int n, candidate,to, from, move=0; // n stands for the number of rings and move counts the move number
     cout<<"Please enter a number of rings to move: ";
     cin>>n;
     cout<<endl;
