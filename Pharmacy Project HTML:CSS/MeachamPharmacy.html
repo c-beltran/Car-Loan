@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Meacham Pharmacy of Elmont</title>
+	<link rel="stylesheet" type="text/css" href="design.css" />	
+	<link href="css/font-awesome.min.css" rel="stylesheet"/>
+	<link rel="shortcut icon" type="image/png" href="img/rxicon.gif"/>
+	
+</head>
+<body>
+
+	<header>
+		<div id="header-inner">
+			<a href="MeachamPharmacy.html" id="logo"></a>
+			<nav>
+					<!--unordered List for the Header of the page-->
+			<a href="#" id="menu-icon"></a>
+				<ul>
+					<!--current link that will take to home-->
+					<li><a href="#" class="current">Home</a></li>
+					<li><a href="#ntce">Notice</a></li>
+					<li><a href="#serv">Services</a></li>
+					<li><a href="#cont">Contact</a></li>
+					<li><a href="#loc">Location</a></li>
+				</ul><!--end of UN List-->
+			</nav>
+		</div>
+	</header>
+	<!--End of Header-->
+	<section class="cell">
+		<h4> HABLAMOS ESPANOL! * Visitanos - 107 Meacham Ave., Elmont, NY 11003 * Llamanos Ahora! (516) 111-1111</h4>
+	</section>
+	<section class = "banner">
+		<!--class "banner-inner" will keep the banner in center and applicable for mobile-->
+		<img src="img/mid_design.png">
+	<!--End of Midsection with picture and text-->
+	
+	<!--Start of Html tabs-->
+	<section class="tabsec">
+	<button class="bar-item button tablink red" onclick="tabLine(event,'Notice')" id="ntce">Notice <i class="fa fa-exclamation-triangle"></i></button>
+    <button class="bar-item button tablink" onclick="tabLine(event,'Services')" id="serv">Services <i class="fa fa-cart-plus"></i></button>
+    <button class="bar-item button tablink" onclick="tabLine(event,'Contact')" id="cont">Contact <i class="fa fa-phone-square"></i></button>
+    <button class="bar-item button tablink" onclick="tabLine(event,'Location')" id="loc">Location <i class="fa fa-map-marker"></i></button>
+	
+
+  
+	<div id="Notice" class="container border title">
+		<h2>Notice</h2>
+		<p>1..............................</p>
+		<p> another one </p>
+	</div>
+
+	<div id="Services" class="container border title" style="display:none">
+		<h2>Services</h2>
+		<p>2................................</p> 
+	</div>
+
+	<div id="Contact" class="container border title" style="display:none">
+		<h2>Contact</h2>
+		<p>3..................................</p>
+	</div>
+	
+	<div id="Location" class="container border title" style="display:none">
+		<h2>Location</h2>
+		<p>4.....................................</p>
+	</div>
+	</div>
+
+	<script>
+	function tabLine(evt, Headline) {
+	  var i, x, tablinks;
+	  x = document.getElementsByClassName("title");
+	  for (i = 0; i < x.length; i++) {
+	      x[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablink");
+	  for (i = 0; i < x.length; i++) {
+	      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+	  }
+	  document.getElementById(Headline).style.display = "block";
+	  evt.currentTarget.className += " w3-red";
+	}
+	</script>
+	</section>
+	<!--End of html tabs-->
+
+	<div id="logo2">
+		
+		<h4>Follow us on facebook!</h4>
+		
+	</div>
+	<!--End of logo section-->
+
+	<footer id="reference">
+		<ul class="social"><!--social media links and icons-->
+			<li><a href="https://www.facebook.com/MeachamPharmacy/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+		</ul>
+	</footer>
+	<!--End of footer section-->
+	<footer class="second">
+		<p>&copy; CB 
+	</footer>
+	<!--End of second footer section-->
+</body>
+</html>
