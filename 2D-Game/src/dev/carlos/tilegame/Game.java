@@ -1,5 +1,7 @@
 package dev.carlos.tilegame;
 
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
 import dev.carlos.tilegame.display.Display;
 
 /*
@@ -18,6 +20,13 @@ public class Game implements Runnable {
 	private boolean running =  false;
 	private Thread thread;//mini program that runs within the big program
 	
+	/*
+	 * variables to access the canvas
+	 * and perform the rendering code 
+	 */
+	private BufferStrategy bs;
+	private Graphics graphics;
+	
 	public Game(String title, int width, int height) {
 		this.width = width;
 		this.height = height;
@@ -33,7 +42,26 @@ public class Game implements Runnable {
 	}
 	
 	private void render(){
+		/*
+		 * this will set the current bufferstrategy to bs
+		 * bufferstrategy is a (hidden screen) way to tell the computer 
+		 * on how to draw things to the screen. uses buffers to do that.
+		 */
+		bs = display.getCanvas().getBufferStrategy();
+		if(bs == null){
+			//if there are no buffers create buffer maxhold is 3
+			display.getCanvas().createBufferStrategy(3);
+			return;
+		}
+		//start to start drawing (using our graphics object)
+		//it allow us to draw to the canvas
+		graphics = bs.getDrawGraphics();//creates the paintbrush
+		//Start of Drawing
+		graphics.fillRect(0, 0, width, height);
 		
+		//End of Drawing
+		bs.show();
+		graphics.dispose();
 	}
 	
 	//must have this class when implementing runnable
@@ -47,7 +75,7 @@ public class Game implements Runnable {
 		stop();
 	}
 
-	//this method is to start the mini program
+	//this method is to start the mini program(game)
 	//we use the word synchronied when we want to acess the runnable class directly
 	public synchronized void start(){
 		if(running){//if game is already running and is = to true just return
@@ -60,7 +88,7 @@ public class Game implements Runnable {
 	}
 	
 	public synchronized void stop(){
-		if(!running){//if game is already stopped return
+		if(!running){//if game is already stopped, return
 			return;
 		}//else continue
 		running = false;
