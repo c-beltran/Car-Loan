@@ -1,8 +1,12 @@
 package dev.carlos.tilegame;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+
 import dev.carlos.tilegame.display.Display;
+import dev.carlos.tilegame.gfx.ImageLoader;
 
 /*
  * main class for our game.
@@ -27,6 +31,9 @@ public class Game implements Runnable {
 	private BufferStrategy bs;
 	private Graphics graphics;
 	
+	//test variables
+	private BufferedImage testImage, testImage2;
+	
 	public Game(String title, int width, int height) {
 		this.width = width;
 		this.height = height;
@@ -35,6 +42,8 @@ public class Game implements Runnable {
 	
 	private void init(){
 		display = new Display(title, width, height);
+		testImage = ImageLoader.loadImage("/textures/Painting.png");
+		testImage2 = ImageLoader.loadImage("/textures/Dog.png");
 	}
 	
 	private void update(){
@@ -56,9 +65,16 @@ public class Game implements Runnable {
 		//start to start drawing (using our graphics object)
 		//it allow us to draw to the canvas
 		graphics = bs.getDrawGraphics();//creates the paintbrush
-		//Start of Drawing
-		graphics.fillRect(0, 0, width, height);
+		//clearing the screen
+		graphics.clearRect(0, 0, width, height);
+		/*
+		 * Start of Drawing
+		 */
+//		graphics.setColor(Color.blue);
+//		graphics.drawRect(20, 50, 50, 20);
 		
+		graphics.drawImage(testImage, 20, 20, null);
+		graphics.drawImage(testImage2, 300, 50, null);
 		//End of Drawing
 		bs.show();
 		graphics.dispose();
