@@ -10,6 +10,7 @@ public class Launcher {
 
 	public static void main(String args[]){
 		//display screen
-		new Game("Game On!", 600, 600);
+		Game game = new Game("Game On!", 600, 600);
+		game.start();
 	}
 }
